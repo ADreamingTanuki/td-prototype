@@ -1,0 +1,119 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #0f1117;
+  --surface: #1a1d27;
+  --border:  #2e3147;
+  --text:    #dde1f0;
+  --muted:   #7a80a0;
+  --gold:    #f0c040;
+  --accent:  #4a9eff;
+  --danger:  #e63946;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 16px;
+  gap: 0;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* ── HUD ─────────────────────────────────────────────────────────────── */
+#hud {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 16px;
+}
+
+.hud-item {
+  color: var(--muted);
+}
+.hud-item span {
+  color: var(--text);
+  font-weight: 600;
+}
+#gold  { color: var(--gold); }
+#lives { color: #ff6b6b; }
+
+#status {
+  margin-left: auto;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ── Canvas ──────────────────────────────────────────────────────────── */
+#game-canvas {
+  display: block;
+}
+
+/* ── Controls ────────────────────────────────────────────────────────── */
+#controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 10px 16px;
+}
+
+#tower-select {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+button:hover:not(:disabled) {
+  background: #252840;
+  border-color: var(--accent);
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.tower-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: #162038;
+}
+
+#start-wave {
+  margin-left: auto;
+  background: #163a18;
+  border-color: #3a8c40;
+  color: #6ddb74;
+  font-weight: 600;
+  padding: 6px 20px;
+}
+#start-wave:hover:not(:disabled) {
+  background: #1e4d20;
+  border-color: #5cc464;
+}

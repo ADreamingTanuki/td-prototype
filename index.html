@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tower Defense</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header id="hud">
+      <span class="hud-item">Gold: <span id="gold">200</span></span>
+      <span class="hud-item">Lives: <span id="lives">20</span></span>
+      <span class="hud-item">Wave: <span id="wave">0 / 3</span></span>
+      <span id="status">Loading…</span>
+    </header>
+
+    <canvas id="game-canvas"></canvas>
+
+    <footer id="controls">
+      <div id="tower-select"></div>
+      <button id="start-wave" disabled>Start Wave</button>
+    </footer>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
